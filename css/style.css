@@ -1,0 +1,324 @@
+*{
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+body{
+	font-family: sans-serif;
+}
+
+/*Start Header Section*/
+
+header{
+	height: 95vh;
+/*	background-image:url(../assets/img/img/banner/banner8.jpg) ;*/
+	background-repeat: no-repeat;
+	background-position: center;
+
+	position: relative;
+
+	transition: all 2s linear;
+}
+
+/*Start Nav Bar*/
+
+.navbar{
+	background: linear-gradient(to right,rgba(0, 0, 0, 1),rgba(0, 0, 0, 0.5));
+}
+
+.nav-link{
+	font-size: 16px;
+	color: #fff !important;     /*overwrite pyint nay dar ko avoid phot*/
+}
+
+.navbar-toggler,
+.navbar-toggler:hover,
+.navbar-toggler:focus{
+	outline: none;
+	border: none;
+	box-shadow: none;
+}
+
+.dropdowns{
+  position: relative;
+}
+
+.dropbtn{
+  background: none !important;
+}
+
+.dropdown-contents{
+	width: 230px;
+ background: #f6f6f6;
+
+ position: absolute;     /* z-index ko direct ma pay bu*/
+ left: 50%;
+
+ transform: translateX(-50%);    /*dropdown box dwe ko center kya say chin lot*/
+
+ z-index: 10;
+
+ display: none;
+
+}
+
+.dropdown-contents.show{
+	display: block;
+}
+
+.dropdown-contents .search{
+  width: 100%;
+  background-image: url('../assets/img/img/icon/searchicon.png');
+  background-repeat: no-repeat;
+  background-position: 10px center;  /* x,y*/
+  border: none;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 5px 10px 40px;
+}
+
+.dropdown-contents .search:focus{
+	outline: none;
+}
+
+.dropdown-contents a{
+    display: block;
+    color: #000;
+    text-decoration: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.dropdowns a:hover{
+	background: #ddd;
+}
+
+/*End Nav Bar*/
+
+
+/*Start Banner Section*/
+
+.banners{
+	color: #fff;
+	font-weight: 900;
+	text-align: center;
+
+	position: absolute;
+	left: 50%;
+	top:50%;
+
+	transform: translate(-50%,-50%);
+}
+
+.bannerheaders{
+	min-width: 600px; /* a nal shone width ko pyaw dar*/
+	background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.3)); 
+	box-shadow: 10px 10px 100px 20px #000;
+	border: 2px dashed #fff;
+	padding: 20px;
+	animation-name: banani;
+	animation-duration: 2s;
+}
+
+.bannerparagraph{
+	animation-name: banani;
+	animation-duration: 2s;
+    animation-delay: .5s;
+    animation-fill-mode: backwards;
+}
+
+
+
+@keyframes banani{
+	from{
+      transform: translateY(100px);
+      opacity: 0;
+	}
+	to{
+      transform: translateY(0px);
+      opacity: 1;
+	}
+}
+
+/*End Banner Section*/
+
+/*End Header Section*/
+
+
+
+/*Start Booking Section*/
+
+.search-rooms{
+	width: 80%;
+	background: linear-gradient(to left,skyblue,steelblue);
+
+	padding: 30px 0;
+	margin-top: -60px;
+
+	position: absolute;
+	left: 50%;
+
+	transform: translateX(-50%);
+}
+
+.search-rooms .form-control{
+	max-width: 20%;      /* a myar sone */
+	display: inline !important;
+	margin: 10px 5px;
+	border-radius: 0;
+	border: none;
+}
+
+.search-rooms .form-control:focus{
+	box-shadow: none;
+}
+
+.search-rooms input[type=text]{
+	width: 200px;
+	transition: width 0.5s ease-in-out;
+}
+
+.search-rooms input[type=text]:focus{
+	width: 100%;
+}
+
+/*End Booking Section*/
+
+
+/*Start Rooms Section*/
+
+.rows{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.columns{
+	max-width: 25%;
+	padding: 0 5px;
+}
+
+.columns img{
+	width: 100%;
+	margin: 5px;
+}
+
+.columns img:hover{
+	opacity: 0.8;
+}
+
+@media(max-width: 800px){
+  .columns{
+  	flex: 50%;   /*po ti kya aung*/
+  	max-width: 50%;
+  }
+}
+
+/*End Rooms Section*/
+
+
+/*Start Our Serviec Section*/
+
+.iconboxs{
+	background: #fff;
+	box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+	padding: 50px 20px;
+
+	position: relative;
+}
+
+.iconboxs::before{
+	content: '';
+
+	width: 100%;
+	height: 2%;
+	background: purple;
+
+	position: absolute;
+	left: 0;
+	bottom: 0;
+
+	transition: all .5s;
+}
+
+.iconboxs:hover::before{
+	height: 8%;
+}
+
+.icons{
+	width: 70px;
+	height: 70px;
+	background: purple;
+	color: #fff;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	position: absolute;
+	top: -35px;
+	left: calc(50% - 35px);
+	/*transform: translate(-50%);*/
+
+	transform: rotate(45deg);
+
+	transition: all .5s ease-in-out;
+}
+
+.icons i{
+	transform: rotate(-45deg);
+}
+
+.iconboxs:hover .icons{
+	background: none;
+	color: purple;
+	border: 2px solid purple;
+}
+
+/*End Our Serviec Section*/
+
+
+/*Start Testimointals Section*/
+
+.testimonial-container{
+	position: relative;
+}
+
+.fa-quotes{
+	color: rgba(255,255,244,.3);
+	font-size: 38px;
+	position: absolute;
+	top:40px;
+}
+
+.fa-quote-left{
+	right: 0;
+}
+
+.fa-quote-right{
+	left: 0;
+}
+
+.testimonial{
+	line-height: 30px;
+}
+
+.progress-bar{
+	width: 100%;
+	height: 4px;
+	background: tomato;
+	transform-origin: left;
+
+	animation-name: myincrement;
+	animation-duration: 10s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+
+@keyframes myincrement{
+	0%{
+		transform: scaleX(0);
+	}
+
+}
+
+/*End Testimointals Section*/
